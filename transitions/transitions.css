@@ -1,47 +1,60 @@
 :root {
-
+	--square-out: inset(50%);
+	--square-in: inset(0);
 }
 
-.circle-in {
-  & > .box {
-    
-  }
+.square-in {
+	& > .box {
+		clip-path: var(--square-out);
 
-  &:is(:hover,:focus,:active) > .box {
-    
-  }
+		@media (--motionOK) {
+			transition: clip-path 0.5s ease;
+		}
+	}
+
+	&:is(:hover, :focus, :active) > .box {
+		clip-path: var(--square-in);
+	}
 }
 
-.circle-out {
-  & > .box {
-    
-  }
+.square-out {
+	& > .box {
+		clip-path: var(--square-in);
 
-  &:is(:hover,:focus,:active) > .box {
-    
-  }
+		@media (--motionOK) {
+			transition: clip-path 0.5s ease;
+		}
+	}
+
+	&:is(:hover, :focus, :active) > .box {
+		clip-path: var(--square-out);
+	}
 }
 
 .square-suprise {
-  display: grid;
-  grid: auto-flow 1fr / 1fr;
+	display: grid;
+	grid: auto-flow 1fr / 1fr;
 
-  & > .box {
-    grid-area: 1 / 1;
+	& > .box {
+		grid-area: 1 / 1;
 
-    &:nth-child(2) {
-      background: deeppink;
-    }
-  }
+		@media (--motionOK) {
+			transition: clip-path 0.5s ease;
+		}
+		&:nth-child(2) {
+			background: deeppink;
+			clip-path: var(--square-in);
+		}
+	}
 
-  &:is(:hover,:focus,:active) {
-    & > .box {
-      &:nth-child(1) {
-        
-      }
-      &:nth-child(2) {
-        
-      }
-    }
-  }
+	&:is(:hover, :focus, :active) {
+		& > .box {
+			&:nth-child(1) {
+				clip-path: var(--square-in);
+			}
+			&:nth-child(2) {
+				clip-path: var(--square-out);
+			}
+		}
+	}
 }
