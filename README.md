@@ -1,4 +1,4 @@
-## 01 transition
+## TRANSITION
 
 -`border-radius`가 아닌 `clip-path`를 이용해서 원 만들 수 있음
 
@@ -10,3 +10,9 @@
 ### `@layer`
 
 > The @layer CSS at-rule is used to declare a cascade layer and can also be used to define the order of precedence in case of multiple cascade layers.
+
+## STORIES
+
+- `overscroll-behavior`를 통해서 스크롤이 컨테이너를 벗어나는 것을 제어할 수 있음
+- grid에 이름을 달아서 사용할 수 있음
+- `lch`로 색상 사용하기 -`user-select:none`, `touch-action:manipulation`
